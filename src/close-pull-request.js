@@ -4,7 +4,7 @@ import * as errors from "./errors";
 
 export const run = async () => {
   const context = github.context;
-  if (context.eventName !== "pull_request_target") {
+  if (context.eventName !== "pull_request_target" && context.eventName !== "pull_request") {
     throw errors.ignoreEvent;
   }
 
